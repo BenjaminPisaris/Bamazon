@@ -12,9 +12,16 @@ var connection = mySQL.createConnection({
 });
 
 //load product data or error
-if (err) {
-    console.error(`error connecting: ${err.stack}`);
-} else {
-    //function to load the product data goes here
+
+
+var loadTable = function() {
+    connection.query("SELECT * FROM products", function (err, res) {
+        if (err) {
+            console.error(`error connecting: ${err.stack}`);
+        } else {
+            //function to load the product data goes here
+            console.table(res);
+        }
+    })
 }
 
