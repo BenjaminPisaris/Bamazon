@@ -101,11 +101,12 @@ function purchase(product, quantity) {
 }
 
 function invCheck(choice, inventory) {
-    for (var i = 1; i < inventory.length; i++) {
-        if (inventory[i].item_id === choice) {
-            return inventory[i];
-        } else {
-            return null;
-        }
+    for (var i = 0; i < inventory.length; i++) {
+      if (inventory[i].item_id === choice) {
+        
+        return inventory[i];
+      }
     }
-}
+    // Otherwise return null
+    return null;
+  }
